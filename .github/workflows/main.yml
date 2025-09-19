@@ -1,0 +1,26 @@
+name: Extracao Autozone
+
+on:
+  schedule:
+    - cron: '0 8 * * *' # Executa todo dia às 05:00 UTC
+  workflow_dispatch: 
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pandas sqlalchemy
+
+      - name: Run script
+        run: python extracao_autozone.py
