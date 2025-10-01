@@ -20,7 +20,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install pandas sqlalchemy duckdb python-dotenv google-auth google-auth-oauthlib google-api-python-client
+          pip install pandas sqlalchemy duckdb python-dotenv google-auth google-auth-oauthlib google-api-python-client psycopg2-binary
 
       - name: Salvar chave de serviço Google Sheets em sa.json
         run: echo "${GSHEETS_SERVICE_ACCOUNT_JSON}" > sa.json
