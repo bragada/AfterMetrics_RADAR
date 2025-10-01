@@ -7,6 +7,8 @@ import duckdb
 from dotenv import load_dotenv
 import sys
 import io
+from sqlalchemy import create_engine, text
+
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
